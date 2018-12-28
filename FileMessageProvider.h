@@ -1,8 +1,8 @@
-#pragma once
+п»ї#pragma once
 #include <iterator>
 #include <fstream>
 #include "IMessageProvider.h"
-/*Считывание данных из файла*/
+/*РЎС‡РёС‚С‹РІР°РЅРёРµ РґР°РЅРЅС‹С… РёР· С„Р°Р№Р»Р°*/
 class FileMessageProvider : public IMessageProvider
 {
 private:

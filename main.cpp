@@ -1,4 +1,4 @@
-#include"stdafx.h"
+ï»¿#include"stdafx.h"
 #include"Point.h"
 #include"MainData.h"
 #include "FileMessageProvider.h"
@@ -26,7 +26,7 @@ int main()
 {	
 	setlocale(LC_ALL, "rus");
 	string Name = "";
-	cout << "Ââåäèòå íàçâàíèå äîêóìåíòà: ";
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð°Ð·Ð²Ð°Ð½Ð¸Ðµ Ð´Ð¾ÐºÑƒÐ¼ÐµÐ½Ñ‚Ð°: ";
 	cin >> Name;
 	const IMessageProvider & messageProvider = FileMessageProvider(Name); 
 	std::vector<uint8_t> line = messageProvider.GetMessage();
@@ -37,12 +37,12 @@ int main()
 	Data data = Data(MainHash);
 	Point result = data.CountSomething();
 	
-	cout << "Ýëåêòðîííàÿ ïîäïèñü äàííîãî äîêóìåíòà ðàâíà (" << result.x << "," << result.y << ")"<< endl;
+	cout << "Ð­Ð»ÐµÐºÑ‚Ñ€Ð¾Ð½Ð½Ð°Ñ Ð¿Ð¾Ð´Ð¿Ð¸ÑÑŒ Ð´Ð°Ð½Ð½Ð¾Ð³Ð¾ Ð´Ð¾ÐºÑƒÐ¼ÐµÐ½Ñ‚Ð° Ñ€Ð°Ð²Ð½Ð° (" << result.x << "," << result.y << ")"<< endl;
 
 	Check Ck = Check(MainHash, result.x, result.y);
 	if (Ck.IsCorrect())
-		cout << "Ïîäïèñü êîððåêòíà" << endl;
+		cout << "ÐŸÐ¾Ð´Ð¿Ð¸ÑÑŒ ÐºÐ¾Ñ€Ñ€ÐµÐºÑ‚Ð½Ð°" << endl;
 	else
-		cout << "Ïîäïèñü íåêîððåêòíà" << endl;
+		cout << "ÐŸÐ¾Ð´Ð¿Ð¸ÑÑŒ Ð½ÐµÐºÐ¾Ñ€Ñ€ÐµÐºÑ‚Ð½Ð°" << endl;
 	system("pause");
 }
